@@ -4,3 +4,4 @@ psycopg[binary]==3.2.6
 celery==5.5.1
 redis==5.2.1
 django-celery-beat==2.7.0
+django-polymorphic==3.1

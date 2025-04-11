@@ -12,6 +12,9 @@ WORKDIR /app
 COPY requirements.txt /app/
 RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
+COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+
 COPY . .
 
 # RUN adduser --disabled-password --no-create-home appuser
@@ -20,5 +23,3 @@ COPY . .
 
 EXPOSE 8000
 
-COPY entrypoint.sh /app/entrypoint.sh
-RUN chmod +x /app/entrypoint.sh

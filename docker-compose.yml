@@ -6,8 +6,9 @@ services:
   web:
     build:
       context: ./backend
+    working_dir: /app
     container_name: smart_home_web
-    command: ["./entrypoint.sh", "python", "manage.py", "runserver", "0.0.0.0:8000"]
+    command: ["/app/entrypoint.sh", "python", "manage.py", "runserver", "0.0.0.0:8000"]
     volumes:
       - ./backend:/app
     ports:
