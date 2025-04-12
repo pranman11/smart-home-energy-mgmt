@@ -96,8 +96,8 @@ docker-compose exec web python manage.py seed_devices
 Every minute, a scheduled Celery Beat task runs the `simulate_device_readings` function, which performs the following for **each user's online devices**:
 
 ### 1. Production Devices
-- `instantaneous_output_watts` is simulated between **1000–5000W**, only between 6 AM and 6 PM.
-- Solar devices produce `0` watts outside daylight hours.
+- `instantaneous_output_watts` is simulated between **1000–5000W**.
+- Solar devices produce `0` watts outside daylight hours (6 AM and 6 PM).
 - Generators can produce power any time.
 
 ### 2. Consumption Devices
