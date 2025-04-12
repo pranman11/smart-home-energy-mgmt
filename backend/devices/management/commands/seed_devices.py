@@ -22,7 +22,7 @@ def create_users(n=5):
         if created:
             user.set_password("password123")
             user.save()
-        users.append(user)
+            users.append(user)
     return users
 
 
@@ -66,8 +66,8 @@ class Command(BaseCommand):
     help = "Seed the database with users and device data."
 
     def handle(self, *args, **kwargs):
-        self.stdout.write("Seeding users and devices...")
+        self.stdout.write("Seeding users and devices if needed...")
         users = create_users(5)
         for user in users:
             seed_devices_for_user(user)
-        self.stdout.write(self.style.SUCCESS("Done seeding!"))
+        self.stdout.write("Done seeding!")
