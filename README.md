@@ -47,7 +47,7 @@ docker-compose up --build
 This script is run when the Django container starts. It:
 
 - Runs `makemigrations` (for devices app) and `migrate` (devices, users and celery beat tables)
-- Seeds initial users + device data
+- Seeds initial users + device data using a management command
 - Creates a default superuser (`admin` / `adminpass`)
 - Starts the server
 
@@ -71,7 +71,7 @@ docker-compose exec web python manage.py shell
 >>> user.save()
 ```
 
-Further, users will need to be granted permission (by the admin) to view their devices from the admin portal. Users are not granted access to add or update devices from admin. This is only allowed via API endpoints described later.
+Further, users will need to be granted permission (by the admin) to view their devices from the admin portal. All users have been given a username and password (user{i}/password123) during the inital seeding. Users are not granted access to add or update devices from admin. This is only allowed via API endpoints described later.
 
 If the entrypoint.sh fails to run migrations and seed initial users and devices, please run the below management commands:
 
