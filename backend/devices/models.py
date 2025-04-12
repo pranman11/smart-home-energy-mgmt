@@ -12,6 +12,7 @@ class Device(models.Model):
     """
     Abstract base model for all device types.
     """
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="%(class)ss")
@@ -23,6 +24,10 @@ class Device(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.__class__.__name__})"
+    
+    # @property
+    # def device_type(self):
+    #     return self.__class__.__name__.replace("Device", "").lower()
 
 class StorageDevice(Device):
     """

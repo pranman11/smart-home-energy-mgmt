@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from celery.schedules import crontab
+from gqlauth.settings_type import GqlAuthSettings
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,7 +24,9 @@ INSTALLED_APPS = [
 
     # third-party apps
     'strawberry.django',
-    "django_celery_beat",
+    'gqlauth',
+    'gqlauth.user',
+    'django_celery_beat',
 
     # my apps
     'devices',
@@ -36,9 +38,19 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'gqlauth.core.middlewares.django_jwt_middleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+]
+
+GQL_AUTH = GqlAuthSettings(
+    LOGIN_REQUIRE_CAPTCHA=False,
+    REGISTER_REQUIRE_CAPTCHA=False,
+)
 
 ROOT_URLCONF = 'config.urls'
 

@@ -1,0 +1,1 @@
+from devices.graphql.schema import schema
