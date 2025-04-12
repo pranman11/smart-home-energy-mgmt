@@ -239,6 +239,10 @@ backend/
 ```
 
 ---
+## Assumptions
+
+- Users are allowed to update all fields (except id and timestamps) while using the create and update APIs
+---
 
 ## 🔧 Future Work and Extensibility Ideas
 
