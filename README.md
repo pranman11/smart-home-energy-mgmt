@@ -240,17 +240,15 @@ backend/
 
 ---
 
-## 🔧 Extensibility Ideas
+## 🔧 Future Work and Extensibility Ideas
 
-- Add pagination to `allDevices`
+- Add pagination and caching to `allDevices`
 - Use Enums for `status` and `device_type`
-- Add historical energy log support
 - Rate-limit GraphQL endpoints
-- Use `django-polymorphic` to simplify `allDevices` queries
-
-## Future Work:
-
-- 
+- Use `django-polymorphic` to simplify `allDevices` queries 
+- Display a consolidated admin to show all devices
+- Handle devices that can be part of both Consumption and Storage like EVs
+ 
 ---
 ## Built using:
 - [Django 5.1.8](https://docs.djangoproject.com/)
