@@ -40,6 +40,7 @@ class Mutation:
                 name=input.name,
                 status=input.status,
                 instantaneous_output_watts=input.instantaneous_output_watts,
+                is_solar=input.is_solar,
             )
 
         elif input.device_type == "storage":
@@ -112,6 +113,7 @@ class Mutation:
         if input.device_type == "production":
             if input.instantaneous_output_watts is not None:
                 device.instantaneous_output_watts = input.instantaneous_output_watts
+            device.is_solar = input.is_solar
             # warn if other subclass fields are provided
             if any([
                 input.total_capacity_wh,

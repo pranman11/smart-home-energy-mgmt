@@ -11,6 +11,7 @@ class DeviceInput:
     device_type: str  # "production", "storage", "consumption"
 
     # Subclass-specific optional fields
+    is_solar: Optional[bool] = False
     instantaneous_output_watts: Optional[int] = None  # Production
     total_capacity_wh: Optional[int] = None           # Storage
     current_level_wh: Optional[int] = None            # Storage
@@ -30,6 +31,7 @@ class DeviceUpdateInput:
     status: Optional[str] = None
 
     # subclass-specific (optional)
+    is_solar: Optional[bool] = False
     instantaneous_output_watts: Optional[int] = None
     total_capacity_wh: Optional[int] = None
     current_level_wh: Optional[int] = None

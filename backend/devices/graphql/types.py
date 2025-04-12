@@ -20,6 +20,7 @@ class DeviceType:
         if isinstance(self, ProductionDevice):
             return {
                 "instantaneous_output_watts": self.instantaneous_output_watts,
+                "is_solar": self.is_solar,
             }
         elif isinstance(self, StorageDevice):
             return {
