@@ -110,7 +110,7 @@ Every minute, a scheduled Celery Beat task runs the `simulate_device_readings` f
 
 ### Aggregation
 - After simulation, data is aggregated per user and stored in Redis:
-```json
+```
 energy_stats:<user_id> = {
   "current_production": ...,
   "current_consumption": ...,
