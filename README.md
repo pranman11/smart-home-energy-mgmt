@@ -6,7 +6,7 @@ A Dockerized Django + Strawberry GraphQL backend for simulating and managing sma
 
 ## 🚀 Features
 
-- ✅ GraphQL API for creating, updating, retrieving devices
+- ✅ GraphQL API for creating, updating, retrieving devices, and user stats
 - ✅ Periodic simulation of energy readings per device
 - ✅ Per-user energy statistics cached in Redis
 - ✅ Admin panel with role-based access
@@ -37,64 +37,6 @@ A Dockerized Django + Strawberry GraphQL backend for simulating and managing sma
 # Clone the repo
 git clone https://github.com/pranman11/smart-home-energy-mgmt.git
 cd smart-home-energy-mgmt
-
-# Build and start all services
-docker-compose up --build
-
-# Run migrations and seed data
-docker-compose exec web python manage.py migrate
-docker-compose exec web python manage.py seed_devices
-
-Absolutely! Here's a comprehensive and developer-friendly `README.md` that explains:
-
-- 🔧 Infrastructure and Docker setup
-- 🧩 GraphQL API design and validation
-- ⚙️ Celery + Redis + PostgreSQL integration
-- 🔁 Periodic simulation and caching logic
-- 🧪 API usage examples and instructions
-
----
-
-```markdown
-# ⚡ Smart Home Energy Management System — Backend API
-
-A Dockerized Django + Strawberry GraphQL backend for simulating and managing smart home energy devices. This system supports JWT-based authentication, polymorphic device modeling, per-user energy stats aggregation, and real-time simulation using Celery + Redis.
-
----
-
-## 🚀 Features
-
-- ✅ JWT Authentication (login, register)
-- ✅ GraphQL API for creating, updating, retrieving devices
-- ✅ Periodic simulation of energy readings per device
-- ✅ Per-user energy statistics cached in Redis
-- ✅ Admin panel with role-based access
-- ✅ Dockerized development setup with Postgres, Redis, Celery, and Django
-
----
-
-## 🏗️ Infrastructure Overview
-
-| Component      | Purpose                                                       |
-|----------------|---------------------------------------------------------------|
-| **Django**     | Core backend and admin interface                              |
-| **Strawberry** | GraphQL API layer using latest `strawberry-graphql`           |
-| **PostgreSQL** | Persistent storage for users and device data                  |
-| **Redis**      | Fast-access cache for computed per-user energy stats          |
-| **Celery**     | Background task processor for device simulation               |
-| **Celery Beat**| Periodic task scheduler to run simulations every minute       |
-| **Docker**     | Containerization of all services for easy local setup         |
-
----
-
-## 📦 Local Setup (Docker)
-
-> Prerequisites: [Docker](https://www.docker.com/products/docker-desktop/) installed.
-
-```bash
-# Clone the repo
-git clone <repo-url>
-cd <project-root>
 
 # Build and start all services
 docker-compose up --build
