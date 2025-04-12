@@ -124,6 +124,8 @@ energy_stats:<user_id> = {
 
 ## 📡 GraphQL API Endpoints
 
+Note: JWT Authentication is under development and not currently tested. Instead, we can interact with the API endpoints by using the Django Admin login. Login to the Django Admin [portal](http://localhost:8000/admin/)  using any non-admin user's credentials and navigate to the graphql playground below to access the user's device details and stats.
+
 GraphQL Playground available at:  
 👉 [`http://localhost:8000/graphql/`](http://localhost:8000/graphql/)
 
