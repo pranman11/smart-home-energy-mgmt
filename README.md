@@ -1,6 +1,6 @@
 # ⚡ Smart Home Energy Management System — Backend API
 
-A Dockerized Django + Strawberry GraphQL backend for simulating and managing smart home energy devices. This system supports three types of decvices - production, consumption and storage, per-user energy stats aggregation, and real-time simulation enabled by periodic tasks using Celery + Redis.
+A Dockerized Django + Strawberry GraphQL backend for simulating and managing smart home energy devices. This system supports three types of energy decvices - production, consumption and storage. Per-user energy stats aggregation and real-time simulation are enabled by periodic tasks using Celery + Redis.
 
 ---
 
