@@ -6,10 +6,10 @@ A Dockerized Django + Strawberry GraphQL backend for simulating and managing sma
 
 ## 🚀 Features
 
-- ✅ GraphQL API for creating, updating, retrieving devices, and user stats
-- ✅ Periodic simulation of energy readings per device
+- ✅ [APIs](https://github.com/pranman11/smart-home-energy-mgmt?tab=readme-ov-file#-graphql-api-endpoints): GraphQL API for creating, updating, retrieving devices, and user stats 
+- ✅ [Simulation](https://github.com/pranman11/smart-home-energy-mgmt?tab=readme-ov-file#-periodic-task-simulate-device-readings): Periodic tasks to generate energy readings per device
 - ✅ Per-user energy statistics cached in Redis
-- ✅ Admin panel with role-based access
+- ✅ [Admin panel](https://github.com/pranman11/smart-home-energy-mgmt?tab=readme-ov-file#-periodic-task-simulate-device-readings) with role-based access
 - ✅ Dockerized development setup with Postgres, Redis, Celery, and Django
 - Pending: JWT Authentication (login, register)
 
